@@ -1,0 +1,10 @@
+{
+  "hosting": {
+    "public": "dist/atelier-des-dragons/browser",
+    "ignore": [
+      "firebase.json",
+      "**/.*",
+      "**/node_modules/**"
+    ]
+  }
+}

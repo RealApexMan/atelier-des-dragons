@@ -1,0 +1,51 @@
+<div class="container text-center mt-5">
+  <div class="row">
+    @for(feature of featureCardList(); track feature.name) {
+      <div class="col-md-4">
+        <button (click)="openFullDescription(feature)">
+          <div class="card feature-card" data-testid="feature-card">
+            <div class="card-header" data-testid="feature-card-title">
+              {{feature.name}}
+            </div>
+            <div class="card-body">
+              <img src="{{ feature.image }}" alt="image" />
+
+              <!-- Overlay Description -->
+              <div class="feature-overlay">
+                <p class="feature-description">
+                  {{ feature.description.length > 500 ? feature.description.substring(0, 250) + '...' : feature.description }}
+                </p>
+              </div>
+
+            </div>
+          </div>
+        </button>
+      </div>
+    }
+  </div>
+</div>
+
+<!-- Modal Pop-up -->
+<div class="modal fade" id="featureModal" tabindex="-1" aria-labelledby="featureModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-lg">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="featureModalLabel">{{ selectedFeature?.name }}</h5>
+        <i class="material-icons closing ms-auto" data-bs-dismiss="modal" aria-label="Close">close</i>
+      </div>
+      <div class="modal-body">
+        <div class="row">
+          <div class="col-md-6">
+            <img [src]="selectedFeature?.image" class="img-fluid custom-image" alt="feature image" />
+          </div>
+          <div class="col-md-6">
+            <p class="feature-description-pop-up" [innerHTML]="sanitizedDescription"></p>
+
+          </div>
+        </div>
+      </div>
+      
+    </div>
+  </div>
+</div>
+

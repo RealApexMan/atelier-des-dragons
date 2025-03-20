@@ -1,0 +1,149 @@
+.contact {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px 0;
+    height: 55vh; // Augmenter légèrement la hauteur pour l'équilibre visuel
+  }
+  
+  .contact-info {
+    width: 30vw;
+    height: 100%;
+    padding: 30px;
+    background: linear-gradient(135deg, #0d0349, #f44336); // Dégradé rouge
+    border-radius: 10px;
+    text-align: center;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    color: white; // Texte blanc pour contraste
+    display: flex;
+    flex-direction: column;
+    justify-content: center; // Centre le texte verticalement
+  }
+  
+  .contact-info h2 {
+    font-size: 24px;
+    margin-bottom: 15px;
+  }
+  
+  .contact-info p {
+    font-size: 16px;
+    margin-bottom: 20px;
+    color: #fff;
+  }
+  
+  .social-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-top: 20px;
+  }
+  
+  .etsy-btn {
+    display: inline-block;
+    background-color: #f16521; // Couleur Etsy
+    color: white;
+    padding: 10px 15px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: bold;
+  }
+  
+  .etsy-btn:hover {
+    background-color: #d4541b;
+  }
+  
+  .social-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: #333;
+    color: white;
+    font-size: 20px;
+    text-decoration: none;
+    transition: 0.3s;
+  }
+  
+  .social-btn:hover {
+    background: #555;
+  }
+  
+  .contact-form {
+    width: 70vw; // Réduction de la largeur pour un formulaire plus compact
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #fff;
+    border-radius: 10px;
+    padding: 20px;
+  }
+  
+  form {
+    width: 50%; // Ajustement pour ne pas être trop large
+    display: flex;
+    flex-direction: column;
+    align-items: center; // Centre le contenu du formulaire
+    gap: 5px;
+  }
+  
+  .name-fields {
+    display: flex;
+    gap: 15px;
+    width: 100%;
+  }
+  
+  .input-group {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    width: 100%;
+  
+    label {
+      font-weight: bold;
+      color: #000;
+    }
+  
+    input, textarea {
+      width: 100%;
+      height: 2.5rem;
+      padding: 10px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      font-size: 16px;
+    }
+  
+    textarea {
+      resize: none;
+      height: 6rem;
+    }
+  
+    input:focus, textarea:focus {
+      border-color: #b71c1c;
+      outline: none;
+      box-shadow: 0 0 5px rgba(183, 28, 28, 0.3);
+    }
+  }
+  
+  .submit-btn {
+    background: linear-gradient(135deg, #0d0349, #f44336);
+    color: white;
+    font-size: 18px;
+    font-weight: bold;
+    padding: 12px 25px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: 0.3s;
+    &:disabled {
+      background: #ccc;
+      cursor: not-allowed;
+    }
+  }
+  
+  .submit-btn:hover {
+    background: linear-gradient(135deg, #a51313, #e53935);
+  }
+  

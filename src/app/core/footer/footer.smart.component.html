@@ -1,0 +1,28 @@
+<div class="footer mt-5">
+    <h3>Inscrivez-vous à notre newsletter</h3>
+    <form (ngSubmit)="onSubmit()" #form="ngForm">
+        <div class="input-group">
+            <label for="email">Email*</label>
+            <input
+            placeholder="Votre email"
+            type="email"
+            [(ngModel)]="email"
+            name="email"
+            #emailField="ngModel"
+            class="form-control"
+            id="email"
+            autocomplete="email"
+            required
+            [class.is-invalid]="emailField.dirty && emailField.invalid"
+          />
+          </div>
+          @if(emailField.dirty && emailField.hasError('required')) {
+            <div class="form-text text-danger" data-testid="error-name-required">Email is required.</div>
+          }
+      <button
+      type="submit" 
+      class="submit-btn"
+      [disabled]="form.invalid"
+     >S'inscrire</button>
+    </form>
+</div>

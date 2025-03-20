@@ -1,0 +1,16 @@
+<app-home-banner
+   title="Découvrez nos créations"
+   description="Bijoux, Accessoires et Papeteries Faits Main En France"
+   button="Follow us on instagram"
+   (clicked)="onBannerClicked()"
+ />
+
+ <app-slider />
+
+ <app-homepage-feature-card-list [featureCardList]="featureCardList()" />
+
+ <app-about />
+
+ <app-testimonials [testimonialsList]="testimonialsList()"  />
+
+ <app-contact />

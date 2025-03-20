@@ -1,0 +1,14 @@
+<h1 data-testid="banner-title" class=" fw-bold">{{ title() }}</h1>
+<h2>
+  <span id="typed"></span>
+</h2>
+ <p data-testid="banner-description" class="lead mt-3">{{ description() }}</p>
+ <a
+   data-testid="banner-button"
+   href="https://www.instagram.com/mei.j_etsy_shop/"
+   target="_blank"
+   class="btn btn-primary btn-lg mt-4"
+   (click)="clicked.emit()"
+ >
+   {{ button() }}
+ </a>

@@ -1,0 +1,114 @@
+<section class="contact">
+  <div class="contact-info">
+    <h2>Contactez-nous</h2>
+    <p>mei.jatelierdesdragons&#64;gmail.com</p>
+
+    <div class="social-buttons">
+      <a href="https://www.etsy.com/fr/shop/MeiJiah" target="_blank" class="etsy-btn">Etsy</a>
+      <a href="https://www.tiktok.com/@" target="_blank" class="social-btn">
+        <i class="fab fa-tiktok"></i>
+      </a>
+      <a href="https://www.instagram.com/mei.j_etsy_shop/" target="_blank" class="social-btn">
+        <i class="fab fa-instagram"></i>
+      </a>
+    </div>
+  </div>
+
+  <div class="contact-form">
+    <form (ngSubmit)="onSubmit()" #form="ngForm">
+        <div class="name-fields">
+        <div class="input-group">
+          <label for="first-name">Prénom*</label>
+          <input type="text" id="firstname" name="firstname" placeholder="Votre prénom"
+          #firstnameField="ngModel"
+          [(ngModel)]="firstname"
+          class="form-control"
+          required
+          minlength="2"
+          maxlength="30"
+          pattern="[a-zA-Z-èéïë]+"
+          [class.is-invalid]="firstnameField.dirty && firstnameField.invalid"
+          >
+          
+        </div>
+        @if(firstnameField.dirty && firstnameField.hasError('required')) {
+          <div class="form-text text-danger" data-testid="error-name-required">Firstname is required.</div>
+        }
+        @if(firstnameField.dirty && firstnameField.hasError('minlength')) {
+          <div class="form-text text-danger" data-testid="error-name-minlength">
+            Firstame must contain at least {{ firstnameField.getError('minlength').requiredLength }} caracters.
+          </div>
+        }
+        @if(firstnameField.dirty && firstnameField.hasError('maxlength')) {
+          <div class="form-text text-danger" data-testid="error-name-maxlength">
+            Firstname must contain maximum {{ firstnameField.getError('maxlength').requiredLength }} caracters.
+          </div>
+        }
+        @if(firstnameField.dirty && firstnameField.hasError('pattern')) {
+          <div class="form-text text-danger" data-testid="error-name-pattern">
+            Firstname must contain only letters.
+          </div>
+        }
+
+        <div class="input-group">
+          <label for="last-name">Nom de famille</label>
+          <input type="text" id="lastname" name="lastname" placeholder="Votre nom"
+          #lastnameField="ngModel"
+          [(ngModel)]="lastname"
+          class="form-control"
+          maxlength="30"
+          pattern="[a-zA-Z-èéïë]+"
+          [class.is-invalid]="lastnameField.dirty && lastnameField.invalid"
+          >       
+        </div>
+        @if(lastnameField.dirty && lastnameField.hasError('maxlength')) {
+          <div class="form-text text-danger" data-testid="error-name-maxlength">
+            Lastname must contain maximum {{ lastnameField.getError('maxlength').requiredLength }} caracters.
+          </div>
+        }
+        @if(lastnameField.dirty && lastnameField.hasError('pattern')) {
+          <div class="form-text text-danger" data-testid="error-name-pattern">
+            Lastname must contain only letters.
+          </div>
+        }
+      </div>
+
+      <div class="input-group">
+        <label for="email">Email*</label>
+        <input
+        placeholder="Votre email"
+        type="email"
+        [(ngModel)]="email"
+        name="email"
+        #emailField="ngModel"
+        class="form-control"
+        id="email"
+        autocomplete="email"
+        required
+        [class.is-invalid]="emailField.dirty && emailField.invalid"
+      />
+      </div>
+      @if(emailField.dirty && emailField.hasError('required')) {
+        <div class="form-text text-danger" data-testid="error-name-required">Email is required.</div>
+      }
+
+      <div class="input-group">
+        <label for="message">Message</label>
+        <textarea id="message" name="message" rows="5" placeholder="Votre message"
+        #nameField="ngModel"
+        [(ngModel)]="message"
+        class="form-control"
+        maxlength="1000"
+        pattern="[a-zA-Z]+"
+        [class.is-invalid]="nameField.dirty && nameField.invalid"
+        ></textarea>
+      </div>
+
+      <button
+       type="submit" 
+       class="submit-btn"
+       [disabled]="form.invalid"
+      >Envoyer</button>
+    </form>
+  </div>
+</section>

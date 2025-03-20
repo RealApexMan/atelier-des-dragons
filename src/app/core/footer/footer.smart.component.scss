@@ -1,0 +1,86 @@
+.footer {
+    text-align: center;
+    padding: 10px;
+    background: linear-gradient(135deg, #b71c1c, #5d0614);
+    color: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    width: 100%;
+    margin: 0 auto; // Centrage du footer
+  
+    h3 {
+      font-size: 24px;
+      margin-bottom: 15px;
+      font-weight: bold;
+    }
+  
+    form {
+      display: flex;
+      justify-content: center;
+      align-items: flex-end; // Alignement parfait sur le bas (input et bouton)
+      gap: 10px;
+      max-width: 500px;
+      margin: 0 auto;
+    }
+  
+    .input-group {
+      display: flex;
+      flex-direction: column;
+      flex: 1; // Permet à l'input de prendre l'espace restant
+      text-align: left;
+  
+      label {
+        font-weight: bold;
+        margin-bottom: 5px;
+      }
+  
+      input {
+        width: 100%;
+        padding: 10px;
+        font-size: 16px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        outline: none;
+        transition: border-color 0.3s ease;
+        height: 42px; // Fixe la hauteur de l'input pour l'aligner parfaitement au bouton
+  
+        &:focus {
+          border-color: #ff6f61;
+          box-shadow: 0 0 5px rgba(255, 111, 97, 0.5);
+        }
+  
+        &.is-invalid {
+          border-color: #ff4d4d;
+          box-shadow: 0 0 5px rgba(255, 77, 77, 0.5);
+        }
+      }
+    }
+  
+    .submit-btn {
+      background: white;
+      color: #b71c1c;
+      font-size: 16px;
+      font-weight: bold;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      height: 42px; // Fixe la hauteur pour aligner parfaitement avec l'input
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      white-space: nowrap; // Évite que le texte se coupe
+  
+      &:hover {
+        background: #b71c1c;
+        color: white;
+      }
+  
+      &:disabled {
+        background: #ccc;
+        cursor: not-allowed;
+      }
+    }
+  }
+  

@@ -1,0 +1,31 @@
+<div class="container text-center mt-5">
+    <div class="row">
+      @for(testimonial of testimonialsList(); track testimonial.name) {
+        <div class="col-md-4">
+            <div class="card feature-card" data-testid="feature-card">
+              <div class="icon" data-testid="feature-card-title">
+                {{testimonial.icon}}
+              </div>
+              <div class="card-body">
+                <i class="name">{{testimonial.name}}</i> 
+                <div class="rating">
+                    <i class="bi bi-star-fill"></i>
+                    <i class="bi bi-star-fill"></i>
+                    <i class="bi bi-star-fill"></i>
+                    <i class="bi bi-star-fill"></i>
+                    <i class="bi bi-star-fill"></i>
+                  </div>
+                <!-- Overlay Description -->
+                <div class="feature-overlay">
+                  <p class="feature-description">
+                    {{ testimonial.comment }}
+                  </p>
+                </div>
+  
+              </div>
+            </div>
+          
+        </div>
+      }
+    </div>
+  </div>
